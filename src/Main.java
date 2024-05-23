@@ -23,6 +23,8 @@ public class Main {
         computers.add(new Computers("Autocont", "Office2", 2009, 20, LocalDate.of(2007, 6, 10)));
         computers.add(new Computers("HP", "Office3", 2001, 14, LocalDate.of(2001, 7, 5)));
 
+        computers.sort(Comparator.comparing(Computers::getYear, Comparator.naturalOrder()).thenComparing(Computers::getWeight));
+
         // output
         for(Computers computer : computers) {
             System.out.println("Description: " + computer.getDescription() + " Brand: " + computer.getBrand() + " Year: " + computer.getYear() + " Weight: " + computer.getWeight());
